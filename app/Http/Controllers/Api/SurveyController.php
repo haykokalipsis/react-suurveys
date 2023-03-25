@@ -227,15 +227,16 @@ class SurveyController extends Controller
 
     public function getBySlug(Survey $survey)
     {
+//        return response()->json(['ghghghj' => 'jjjjjjjjjjjj'], 200);
         if (!$survey->status) {
             return response("", 404);
         }
 
         $currentDate = new \DateTime();
         $expireDate = new \DateTime($survey->expire_date);
-        if ($currentDate > $expireDate) {
-            return response("", 404);
-        }
+//        if ($currentDate > $expireDate) {
+//            return response("", 404);
+//        }
 
         return new SurveyResource($survey);
     }
