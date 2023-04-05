@@ -25,9 +25,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/dashboard', [\App\Http\Controllers\Api\DashboardController::class, 'index']);
 });
 
-//Route::get('/surveys/get-by-slug/slug', function () {
-//    return response()->json(['gghghg' => 'hhhhhhhhhhhh'], 200);
-//});
+Route::get('/surveys/get-by-slug/slug', function () {
+    return response()->json(['gghghg' => 'hhhhhhhhhhhh'], 200);
+});
 Route::get('/surveys/get-by-slug/{survey:slug}', [\App\Http\Controllers\Api\SurveyController::class, 'getBySlug']);
 Route::post('/surveys/{survey}/answer', [\App\Http\Controllers\Api\SurveyController::class, 'storeAnswer']);
 
